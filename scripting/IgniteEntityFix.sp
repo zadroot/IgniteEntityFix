@@ -24,7 +24,7 @@ public Plugin:myinfo =
 	description = "Fixes looping fire sound even if ignited entity is dead or invalid",
 	version     = PLUGIN_VERSION,
 	url         = "http://dodsplugins.com/"
-};
+}
 
 
 /* OnPluginStart()
@@ -76,7 +76,7 @@ public Action:FireLoopSound(clients[64], &numClients, String:sample[PLATFORM_MAX
 public Action:Timer_EmitFireSound(Handle:timer, any:client)
 {
 	// To check whether or not client is ignited, check its m_hEffectEntity netprop value
-	// If its more than 0 (it also may be -1), then client is burning
+	// If its more than 0 (it also may be -1) - then client is burning
 	if (IsClientInGame(client) && IsPlayerAlive(client) &&
 	GetEntPropEnt(client, Prop_Send, "m_hEffectEntity") > 0)
 	{
